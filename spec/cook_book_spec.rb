@@ -10,7 +10,7 @@ describe CookBook do
   end
 
   it 'exists' do
-    expect(@cookbook).to be_a(Cookbook)
+    expect(@cookbook).to be_a(CookBook)
   end
 
   it 'can add recipes' do
