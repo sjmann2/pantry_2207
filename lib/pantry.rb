@@ -14,15 +14,14 @@ class Pantry
   end
 
   def enough_ingredients_for?(recipe)
-    #check that ingredients required matches
-    #the stock ingredients in the correct quantity
+    #issue with the order they're being compared in?
     enough_ingredients_for =
-      recipe.ingredients_required.flat_map do |recipe_ingredient, recipe_count|
+      recipe.ingredients_required.map do |recipe_ingredient, recipe_count|
         @stock.map do |stock_ingredient, stock_count|
-          stock_ingredient == recipe_ingredient && stock_count >= recipe_count
-     
+          if @stock.include?(recipe_ingredient) && stock_count >= recipe_count
+          end
+        end
       end
-    end
-    # enough_ingredients_for.all?(true)
+    enough_ingredients_for.all?(true)
   end
 end
