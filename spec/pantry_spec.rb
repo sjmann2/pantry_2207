@@ -1,4 +1,5 @@
 require './lib/pantry'
+require './lib/ingredient'
 
 describe Pantry do
   before :each do
@@ -16,7 +17,7 @@ describe Pantry do
     expect(@pantry.stock_check(@ingredient1)).to eq(0)
   end
 
-  it 'can restock ingredients' do
+  xit 'can restock ingredients' do
     @pantry.restock(@ingredient1, 5)
     @pantry.restock(@ingredient1, 10)
 
