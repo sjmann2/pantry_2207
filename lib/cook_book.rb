@@ -21,11 +21,10 @@ class CookBook
 
   # COME BACK TO THIS
   def highest_calorie_meal
-    recipe_calories =
-    @recipes.flat_map do |recipe|
-      [recipe, recipe.total_calories]
-      #recipe object, total calories
-    end 
-    recipe_calories.max { |meal_1, meal_2| meal_1[1] <=> meal_2[1] }
+    total_calories = Hash.new { |h, k| h[k] = [] }
+    @recipes.each do |recipe|
+      total_calories[recipe] << recipe.total_calories
     end
+    total_calories[:name].max { |cal_1, cal_2| cal_1[1] <=> cal_2[1] }
   end
+end
