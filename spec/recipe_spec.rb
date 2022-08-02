@@ -1,6 +1,5 @@
 require './lib/ingredient'
 require './lib/recipe'
-require './lib/cook_book'
 
 describe Recipe do
   before :each do
