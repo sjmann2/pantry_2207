@@ -31,7 +31,6 @@ describe Recipe do
 
   describe "Iteration 3" do
     before :each do
-      @pantry = Pantry.new
       @ingredient1 = Ingredient.new({name: "Cheese", unit: "C", calories: 100})
       @ingredient2 = Ingredient.new({name: "Macaroni", unit: "oz", calories: 30})
       @ingredient3 = Ingredient.new({name: "Ground Beef", unit: "oz", calories: 100})
